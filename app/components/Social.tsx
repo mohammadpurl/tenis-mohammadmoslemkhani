@@ -11,15 +11,16 @@ type SocialProps = {
 };
 
 const SOCIAL_VIDEO_SRC = "/Videos/Therapy_web_optimized.mp4";
-
+const SOCIAL_VIDEO_SRC2 = "/Videos/This is Yonex Muse.mp4";
+const SOCIAL_VIDEO_SRC3 = "/Videos/MAY YOUR CHOICESREFLECT.mp4";
 const Social = ({ t }: SocialProps) => {
     const mediaItems = [
       { type: "image" as const, src: perfHero },
       { type: "image" as const, src: coachRacket },
       { type: "image" as const, src: perfCoach },
-      { type: "image" as const, src: cert1 },
+      { type: "video" as const, src: SOCIAL_VIDEO_SRC2 },
       { type: "video" as const, src: SOCIAL_VIDEO_SRC },
-      { type: "image" as const, src: cert2 },
+      { type: "video" as const, src: SOCIAL_VIDEO_SRC3 },
     ];
     return (
         <section className="py-24 md:py-36 px-5 md:px-10 border-t border-border">
