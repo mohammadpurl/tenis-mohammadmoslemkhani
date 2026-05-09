@@ -47,7 +47,7 @@ const Footer = ({ lang, t }: FooterProps) => {
                     <WhatsAppIcon className="w-4 h-4" /> {t.header.whatsapp}
                   </Link>
                   <Link href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm px-3 py-2 rounded-md border border-border bg-background/35 hover:border-neon hover:text-neon transition">
-                    <InstagramIcon className="w-4 h-4 shrink-0" /> {t.footer.instagram}: {t.social.handle}
+                    <InstagramIcon className="w-6 h-6 text-pink-500 shrink-0" /> {t.footer.instagram}: {t.social.handle}
                   </Link>
                   <p className="inline-flex items-center gap-2 text-sm text-foreground/80 px-3 py-2 rounded-md border border-border bg-background/35"><MapPin className="w-4 h-4 text-neon" /> {t.header.location}</p>
                 </div>

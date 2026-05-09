@@ -37,7 +37,7 @@ const Social = ({ t }: SocialProps) => {
                 rel="noreferrer"
                 className="mt-8 inline-flex items-center gap-2 px-6 py-3 border border-foreground/20 hover:border-neon hover:text-neon transition"
               >
-                <InstagramIcon className="w-4 h-4 shrink-0" />
+                <InstagramIcon className="w-6 h-6 text-pink-500" />
                 {t.social.cta}
               </Link>
             </div>
@@ -57,7 +57,7 @@ const Social = ({ t }: SocialProps) => {
                     />
                   )}
                   <div className="absolute inset-0 bg-background/0 group-hover:bg-background/40 transition flex items-center justify-center">
-                    <InstagramIcon className="w-5 h-5 text-neon opacity-0 group-hover:opacity-100 transition shrink-0" />
+                    <InstagramIcon className="w-5 h-5 text-pink-500 opacity-0 group-hover:opacity-100 transition shrink-0" />
                   </div>
                 </div>
               ))}

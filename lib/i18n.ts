@@ -13,6 +13,7 @@ export const translations = {
       whatsapp: "WhatsApp Now",
       openMenu: "Open menu",
       closeMenu: "Close menu",
+      mainNavigation: "Main navigation",
     },
     hero: {
       eyebrow: "Private Tennis Coaching",
@@ -146,6 +147,7 @@ export const translations = {
       whatsapp: "واتساپ مستقیم",
       openMenu: "باز کردن منو",
       closeMenu: "بستن منو",
+      mainNavigation: "منوی اصلی",
     },
     hero: {
       eyebrow: "مربی خصوصی تنیس",
@@ -279,6 +281,7 @@ export const translations = {
       whatsapp: "واتساب مباشر",
       openMenu: "فتح القائمة",
       closeMenu: "إغلاق القائمة",
+      mainNavigation: "القائمة الرئيسية",
     },
     hero: {
       eyebrow: "تدريب تنس خاص",

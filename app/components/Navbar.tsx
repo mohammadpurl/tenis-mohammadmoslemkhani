@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { usePathname, useRouter } from "next/navigation";
 import WhatsAppIcon from "../Icons/WhatsAppIcon";
 
@@ -35,6 +36,7 @@ const Navbar = ({ lang, t }: NavbarProps) => {
   const pathname = usePathname();
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [portalReady, setPortalReady] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
   const [headerHeight, setHeaderHeight] = useState(72);
 
@@ -57,6 +59,10 @@ const Navbar = ({ lang, t }: NavbarProps) => {
       document.body.style.overflow = prev;
     };
   }, [menuOpen]);
+
+  useEffect(() => {
+    setPortalReady(true);
+  }, []);
 
   useLayoutEffect(() => {
     const el = headerRef.current;
@@ -173,27 +179,33 @@ const Navbar = ({ lang, t }: NavbarProps) => {
         </div>
       </div>
 
-      {menuOpen ? (
-        <div
-          id="mobile-nav-panel"
-          className="md:hidden fixed inset-x-0 bottom-0 z-[100] flex flex-col bg-background/97 backdrop-blur-lg border-t border-border"
-          style={{ top: headerHeight }}
-        >
-          <nav className="flex flex-col px-4 sm:px-5 py-4 overflow-y-auto overscroll-contain" aria-label="Mobile">
-            {navLinks}
-            <Link
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-4 inline-flex items-center justify-center gap-2 btn-lux btn-lux-primary"
-              onClick={closeMenu}
+      {portalReady && menuOpen
+        ? createPortal(
+            <div
+              id="mobile-nav-panel"
+              role="dialog"
+              aria-modal="true"
+              aria-label={t.header.mainNavigation}
+              className="md:hidden fixed inset-x-0 bottom-0 z-[200] flex flex-col bg-background/97 backdrop-blur-lg border-t border-border shadow-[0_-8px_40px_-12px_rgba(0,0,0,0.5)]"
+              style={{ top: headerHeight }}
             >
-              <WhatsAppIcon className="w-4 h-4" />
-              {t.header.whatsapp}
-            </Link>
-          </nav>
-        </div>
-      ) : null}
+              <nav className="flex flex-col px-4 sm:px-5 py-4 overflow-y-auto overscroll-contain min-h-0 flex-1" aria-label="Mobile">
+                {navLinks}
+                <Link
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-4 inline-flex items-center justify-center gap-2 btn-lux btn-lux-primary"
+                  onClick={closeMenu}
+                >
+                  <WhatsAppIcon className="w-4 h-4" />
+                  {t.header.whatsapp}
+                </Link>
+              </nav>
+            </div>,
+            document.body,
+          )
+        : null}
     </header>
   );
 };

@@ -38,7 +38,7 @@ const FinalCTA = ({ t }: FinalCTAProps) => {
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 btn-lux btn-lux-ghost"
                 >
-                  <InstagramIcon className="w-4 h-4 shrink-0" />
+                  <InstagramIcon className="w-6 h-6 text-pink-500" />
                   {t.cta.instagram}
                 </Link>
               </div>
