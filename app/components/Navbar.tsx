@@ -2,7 +2,6 @@
 import { WHATSAPP_URL } from "@/lib";
 import type { Lang, Translation } from "@/lib/i18n";
 import { locales } from "@/lib/i18n";
-import { MessageCircle } from "lucide-react";
 import { coachPortrait } from "@/public/assets";
 import Image from "next/image";
 import Link from "next/link";
@@ -19,6 +18,11 @@ const labels: Record<Lang, string> = {
   en: "EN",
   ar: "AR",
 };
+
+const navLinkClass = (lang: Lang) =>
+  lang === "en"
+    ? "text-[13px] md:text-sm font-semibold uppercase tracking-[0.08em] text-foreground/90 hover:text-foreground transition"
+    : "text-[14px] md:text-[15px] font-semibold text-foreground/92 hover:text-foreground transition";
 
 const Navbar = ({ lang, t }: NavbarProps) => {
   const pathname = usePathname();
@@ -41,21 +45,21 @@ const Navbar = ({ lang, t }: NavbarProps) => {
             <p className="text-[11px] text-foreground/80 leading-tight mt-1">{t.header.subLabel}</p>
           </div>
         </Link>
-        <nav className="hidden md:flex items-center gap-7 text-[12px] uppercase tracking-[0.12em] text-foreground/80">
-          <Link href={`/${lang}`} className="hover:text-foreground transition">{t.nav.home}</Link>
-          <Link href={`/${lang}#about`} className="hover:text-foreground transition">{t.nav.about}</Link>
-          <Link href={`/${lang}#services`} className="hover:text-foreground transition">{t.nav.training}</Link>
-          <Link href={`/${lang}#results`} className="hover:text-foreground transition">{t.nav.results}</Link>
-          <Link href={`/${lang}/articles`} className="hover:text-foreground transition">{t.nav.articles}</Link>
-          <Link href={`/${lang}#contact`} className="hover:text-foreground transition">{t.nav.contact}</Link>
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+          <Link href={`/${lang}`} className={navLinkClass(lang)}>{t.nav.home}</Link>
+          <Link href={`/${lang}#about`} className={navLinkClass(lang)}>{t.nav.about}</Link>
+          <Link href={`/${lang}#services`} className={navLinkClass(lang)}>{t.nav.training}</Link>
+          <Link href={`/${lang}#results`} className={navLinkClass(lang)}>{t.nav.results}</Link>
+          <Link href={`/${lang}/articles`} className={navLinkClass(lang)}>{t.nav.articles}</Link>
+          <Link href={`/${lang}#contact`} className={navLinkClass(lang)}>{t.nav.contact}</Link>
         </nav>
         <div className="flex items-center gap-3">
-          <div className="flex items-center gap-1.5 text-xs">
+          <div className="flex items-center gap-1.5 text-[13px] font-semibold">
             {locales.map((code) => (
               <button
                 key={code}
                 onClick={() => switchLanguage(code)}
-                className={`px-2.5 py-1.5 rounded-md border transition ${
+                className={`min-w-[2.5rem] px-3 py-2 rounded-md border transition ${
                   lang === code
                     ? "text-neon border-neon bg-background/70 font-semibold"
                     : "text-foreground/75 border-border hover:text-foreground hover:border-neon/50"

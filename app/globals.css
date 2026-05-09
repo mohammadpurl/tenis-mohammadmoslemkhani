@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=Cairo:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Vazirmatn:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
@@ -31,7 +31,7 @@
   --color-neon-dim: var(--neon-dim);
   --font-sans: var(--font-inter), 'Vazirmatn', 'Cairo', sans-serif;
   --font-display: var(--font-oswald), var(--font-inter), 'Vazirmatn', 'Cairo', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'Cairo', monospace;
 }
 
 :root {
@@ -84,15 +84,38 @@
   body {
     background: var(--background);
     color: var(--foreground);
-    font-family: var(--font-sans);
+    font-family: var(--font-inter), system-ui, sans-serif;
     font-size: clamp(16px, 0.95rem + 0.25vw, 18px);
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     font-feature-settings: "ss01", "ss02";
   }
 
-  [dir="rtl"] body {
-    font-family: var(--font-yekanbakh), 'Vazirmatn', 'Cairo', sans-serif;
+  /* Per-language stacks so glyphs never “disappear” (Oswald has no Arabic/Farsi). */
+  [lang="fa"] {
+    font-family: var(--font-yekanbakh), "Vazirmatn", sans-serif;
+  }
+
+  [lang="ar"] {
+    font-family: "Cairo", "Vazirmatn", sans-serif;
+  }
+
+  [lang="en"] {
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+
+  [lang="fa"] .font-display,
+  [lang="ar"] .font-display {
+    font-family: inherit;
+    letter-spacing: -0.01em;
+  }
+
+  [lang="fa"] .font-display {
+    font-family: var(--font-yekanbakh), "Vazirmatn", sans-serif;
+  }
+
+  [lang="ar"] .font-display {
+    font-family: "Cairo", "Vazirmatn", sans-serif;
   }
 
   ::selection {
