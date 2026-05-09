@@ -38,7 +38,7 @@ const Navbar = ({ lang, t }: NavbarProps) => {
           <Image src={coachPortrait} alt="Coach portrait" width={42} height={42} className="rounded-full border border-border object-cover" />
           <div className="min-w-0">
             <p className="font-display font-bold tracking-tight text-[15px] leading-none">Mohammad Moslemkhani</p>
-            <p className="text-[11px] text-foreground/80 leading-tight mt-1">مربیگری خصوصی تنیس و آمادگی جسمانی</p>
+            <p className="text-[11px] text-foreground/80 leading-tight mt-1">{t.header.subLabel}</p>
           </div>
         </Link>
         <nav className="hidden md:flex items-center gap-7 text-[12px] uppercase tracking-[0.12em] text-foreground/80">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "@fontsource-variable/vazirmatn/index.css";
 import "./globals.css";
 import localFont from "next/font/local";
+import { Inter, Oswald } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "Mohammad Moslemkhani",
@@ -48,13 +49,25 @@ const yekanbakh = localFont({
   variable: "--font-yekanbakh",
 });
 
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  variable: "--font-oswald",
+  display: "swap",
+});
+
 export default function AppLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fa" className={`h-full antialiased  ${yekanbakh.variable}`} >
+    <html lang="fa" className={`h-full antialiased ${yekanbakh.variable} ${inter.variable} ${oswald.variable}`}>
       <body className="min-h-screen bg-background text-foreground font-sans">{children}</body>
     </html>
   );

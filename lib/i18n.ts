@@ -8,6 +8,7 @@ export const translations = {
     nav: { home: "Home", about: "About", training: "Training", results: "Results", articles: "Articles", contact: "Contact" },
     header: {
       label: "Personal Coaching Website",
+      subLabel: "Private Tennis & Conditioning Coaching",
       location: "Dubai",
       whatsapp: "WhatsApp Now",
     },
@@ -130,6 +131,7 @@ export const translations = {
     nav: { home: "خانه", about: "درباره", training: "آموزش", results: "نتایج", articles: "مقالات", contact: "تماس" },
     header: {
       label: "وب‌سایت شخصی مربی",
+      subLabel: "مربیگری خصوصی تنیس و آمادگی جسمانی",
       location: "دبی",
       whatsapp: "واتساپ مستقیم",
     },
@@ -252,6 +254,7 @@ export const translations = {
     nav: { home: "الرئيسية", about: "نبذة", training: "التدريب", results: "النتائج", articles: "المقالات", contact: "تواصل" },
     header: {
       label: "موقع تدريب شخصي",
+      subLabel: "تدريب خاص للتنس والإعداد البدني",
       location: "دبي",
       whatsapp: "واتساب مباشر",
     },
