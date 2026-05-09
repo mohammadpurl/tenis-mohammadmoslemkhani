@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Vazirmatn:wght@300;400;500;600;700;800&family=Cairo:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 4px);
+  --radius-xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-neon: var(--neon);
+  --color-neon-dim: var(--neon-dim);
+  --font-sans: 'Space Grotesk', 'Vazirmatn', 'Cairo', sans-serif;
+  --font-display: 'Space Grotesk', 'Vazirmatn', 'Cairo', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+:root {
+  --radius: 0.125rem;
+  /* Matte Black */
+  --background: oklch(0.14 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.18 0 0);
+  --card-foreground: oklch(0.97 0 0);
+  --popover: oklch(0.22 0 0);
+  --popover-foreground: oklch(0.97 0 0);
+  /* Olive / gold accent (closer to reference) */
+  --primary: oklch(0.80 0.12 120);
+  --primary-foreground: oklch(0.10 0 0);
+  --neon: oklch(0.80 0.12 120);
+  --neon-dim: oklch(0.72 0.10 120);
+  --gold: oklch(0.82 0.11 88);
+  --secondary: oklch(0.25 0 0);
+  --secondary-foreground: oklch(0.97 0 0);
+  --muted: oklch(0.20 0 0);
+  --muted-foreground: oklch(0.78 0 0);
+  --accent: oklch(0.95 0.27 125);
+  --accent-foreground: oklch(0.10 0 0);
+  --destructive: oklch(0.60 0.22 27);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.28 0 0);
+  --input: oklch(0.22 0 0);
+  --ring: oklch(0.80 0.12 120);
+
+  --gradient-neon: linear-gradient(135deg, oklch(0.82 0.12 120), oklch(0.74 0.10 112));
+  --gradient-hero: radial-gradient(ellipse at 20% 10%, oklch(0.80 0.12 120 / 0.12) 0%, transparent 50%),
+    linear-gradient(180deg, oklch(0.08 0 0 / 0.15) 0%, oklch(0.08 0 0 / 0.60) 55%, oklch(0.14 0 0) 100%);
+  --shadow-neon: 0 0 70px -18px oklch(0.80 0.12 120 / 0.55);
+  --shadow-elegant: 0 30px 60px -20px oklch(0 0 0 / 0.7);
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-size: clamp(16px, 0.95rem + 0.25vw, 18px);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "ss01", "ss02";
+  }
+
+  [dir="rtl"] body {
+    font-family: var(--font-yekanbakh), 'Vazirmatn', 'Cairo', sans-serif;
+  }
+
+  ::selection {
+    background: var(--neon);
+    color: oklch(0.10 0 0);
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    background: linear-gradient(135deg, var(--gold, oklch(0.82 0.11 88)), oklch(0.90 0.07 92));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .text-neon {
+    color: var(--neon);
+  }
+
+  .text-gradient-neon {
+    background: var(--gradient-neon);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .bg-grain {
+    background-image: radial-gradient(oklch(1 0 0 / 0.02) 1px, transparent 1px);
+    background-size: 3px 3px;
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(oklch(1 0 0 / 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(1 0 0 / 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .glass {
+    background: oklch(0.10 0 0 / 0.78);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border-bottom: 1px solid oklch(1 0 0 / 0.06);
+  }
+
+  .glow-neon {
+    box-shadow: var(--shadow-neon);
+  }
+
+  .ring-neon {
+    box-shadow: 0 0 0 1px oklch(0.95 0.27 125 / 0.4), inset 0 0 0 1px oklch(0.95 0.27 125 / 0.15);
+  }
+
+  .mono {
+    font-family: var(--font-mono);
+  }
+
+  [dir="rtl"] .mono {
+    font-family: var(--font-yekanbakh), 'Vazirmatn', 'Cairo', sans-serif;
+    letter-spacing: normal;
+    font-variant-ligatures: common-ligatures;
+  }
+
+  .btn-lux {
+    border-radius: 0.45rem;
+    border: 1px solid var(--border);
+    padding: 0.72rem 1.15rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    transition: all 180ms ease;
+  }
+
+  .btn-lux-primary {
+    background: var(--neon);
+    color: var(--primary-foreground);
+    border-color: oklch(0.70 0.09 120);
+    box-shadow: 0 10px 24px -14px oklch(0.80 0.12 120 / 0.85);
+  }
+
+  .btn-lux-primary:hover {
+    filter: brightness(1.03);
+  }
+
+  .btn-lux-ghost {
+    background: oklch(0.16 0 0 / 0.65);
+    color: var(--foreground);
+  }
+
+  .btn-lux-ghost:hover {
+    border-color: var(--neon);
+    color: var(--neon);
+  }
+
+  /* Section label above H2 — readable size, logical alignment via parent text-start / text-center */
+  .section-kicker {
+    display: block;
+    font-weight: 600;
+    font-size: clamp(1.125rem, 1rem + 0.65vw, 1.5rem);
+    line-height: 1.35;
+    color: var(--neon);
+  }
+
+  [dir="ltr"] .section-kicker {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
+
+  [dir="rtl"] .section-kicker {
+    font-family: var(--font-yekanbakh), "Vazirmatn", "Cairo", sans-serif;
+    letter-spacing: 0.02em;
+  }
+}
