@@ -90,7 +90,7 @@ const Hero = ({ t }: HeroProps) => {
                       className="object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
-                    <div className="absolute -bottom-10 -right-10 w-56 h-56 border border-neon/20 pointer-events-none" />
+                    {/* <div className="absolute -bottom-10 -right-10 w-56 h-56 border border-neon/20 pointer-events-none" /> */}
                   </div>
 
                   <div className="mt-4 flex flex-wrap gap-2">
