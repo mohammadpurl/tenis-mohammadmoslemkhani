@@ -8,9 +8,9 @@ export const metadata: Metadata = {
   title: "Mohammad Moslemkhani",
   description: "Tennis and performance conditioning specialist",
   icons: {
-    icon: [{ url: "/favicon.svg", type: "image/svg+xml", sizes: "any" }],
-    shortcut: "/favicon.svg",
-    apple: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    icon: [{ url: "/favicon.ico", type: "image/svg+xml", sizes: "any" }],
+    shortcut: "/favicon.ico",
+    apple: [{ url: "/favicon.ico", type: "image/svg+xml" }],
   },
 };
 const yekanbakh = localFont({
