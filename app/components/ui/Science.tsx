@@ -24,7 +24,7 @@ const Science = ({ t }: ScienceProps) => {
     
             {/* Demands */}
             <div className="mb-20">
-              <h3 className="mono text-xs uppercase tracking-widest text-foreground/50 mb-6">{t.science.demands.title}</h3>
+              <h3 className="mono text-lg font-display font-bold uppercase tracking-widest text-foreground mb-6">{t.science.demands.title}</h3>
               <div className="grid sm:grid-cols-5 gap-px bg-border">
                 {t.science.demands.items.map((d, i) => (
                   <motion.div
@@ -37,7 +37,7 @@ const Science = ({ t }: ScienceProps) => {
                   >
                     <div className="flex items-baseline justify-between mb-3">
                       <span className="text-2xl font-display font-bold text-neon">{d.v}</span>
-                      <span className="mono text-[10px] text-muted-foreground">%</span>
+                      <span className="mono text-xs text-muted-foreground">%</span>
                     </div>
                     <div className="h-1 bg-border overflow-hidden">
                       <motion.div
@@ -56,7 +56,7 @@ const Science = ({ t }: ScienceProps) => {
     
             {/* Energy systems */}
             <div className="mb-20">
-              <h3 className="mono text-xs uppercase tracking-widest text-foreground/50 mb-6">{t.science.systems.title}</h3>
+              <h3 className="mono text-lg font-display font-bold uppercase tracking-widest text-foreground mb-6">{t.science.systems.title}</h3>
               <div className="grid md:grid-cols-3 gap-4">
                 {t.science.systems.items.map((s, i) => (
                   <motion.div
@@ -70,7 +70,7 @@ const Science = ({ t }: ScienceProps) => {
                     <div className="absolute top-0 right-0 w-24 h-24 bg-[var(--neon)] opacity-[0.04] blur-2xl group-hover:opacity-10 transition" />
                     <div className="flex items-center gap-2 mb-6">
                       <Sparkles className="w-3.5 h-3.5 text-neon" />
-                      <span className="mono text-[10px] tracking-widest text-neon">{s.code}</span>
+                      <span className="mono text-xs tracking-widest text-neon">{s.code}</span>
                     </div>
                     <h4 className="font-display font-semibold text-2xl mb-2">{s.t}</h4>
                     <div className="mono text-xs text-muted-foreground mb-4 flex items-center gap-1.5">
@@ -84,7 +84,7 @@ const Science = ({ t }: ScienceProps) => {
     
             {/* HIIT */}
             <div className="mb-20">
-              <h3 className="mono text-xs uppercase tracking-widest text-foreground/50 mb-6">{t.science.hiit.title}</h3>
+              <h3 className="mono text-lg font-display font-bold uppercase tracking-widest text-foreground mb-6">{t.science.hiit.title}</h3>
               <div className="border border-border divide-y divide-border">
                 {t.science.hiit.items.map((h, i) => (
                   <motion.div
@@ -100,11 +100,11 @@ const Science = ({ t }: ScienceProps) => {
                       <span className="font-display font-semibold text-lg md:text-xl">{h.t}</span>
                     </div>
                     <div className="col-span-6 md:col-span-2">
-                      <div className="mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">{t.science.hiit.workLabel}</div>
+                      <div className="mono text-xs uppercase tracking-widest text-muted-foreground mb-1">{t.science.hiit.workLabel}</div>
                       <div className="mono text-sm text-neon">{h.w}</div>
                     </div>
                     <div className="col-span-6 md:col-span-2">
-                      <div className="mono text-[10px] uppercase tracking-widest text-muted-foreground mb-1">{t.science.hiit.restLabel}</div>
+                      <div className="mono text-xs uppercase tracking-widest text-muted-foreground mb-1">{t.science.hiit.restLabel}</div>
                       <div className="mono text-sm text-foreground/80">{h.r}</div>
                     </div>
                     <div className="col-span-12 md:col-span-4 text-sm text-foreground/60">{h.d}</div>
@@ -115,7 +115,7 @@ const Science = ({ t }: ScienceProps) => {
     
             {/* Movement patterns — court diagram */}
             <div>
-              <h3 className="mono text-xs uppercase tracking-widest text-foreground/50 mb-6">{t.science.movement.title}</h3>
+              <h3 className="mono text-lg font-display font-bold uppercase tracking-widest text-foreground mb-6">{t.science.movement.title}</h3>
               <div className="grid md:grid-cols-2 gap-6 items-stretch">
                 <CourtDiagram />
                 <div className="grid grid-cols-2 gap-px bg-border">

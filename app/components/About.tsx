@@ -28,19 +28,19 @@ const About = ({ t }: AboutProps) => {
 
           <div className="mt-8 grid sm:grid-cols-3 gap-3">
             <div className="border border-border bg-background/40 p-4">
-              <p className="mono text-[10px] uppercase tracking-widest text-muted-foreground">Experience</p>
+              <p className="mono text-xs uppercase tracking-widest text-muted-foreground">Experience</p>
               <p className="mt-2 inline-flex items-center gap-2 text-sm font-semibold">
                 <Trophy className="w-4 h-4 text-neon" /> {t.about.stats[0].v} {t.about.stats[0].l}
               </p>
             </div>
             <div className="border border-border bg-background/40 p-4">
-              <p className="mono text-[10px] uppercase tracking-widest text-muted-foreground">Sessions</p>
+              <p className="mono text-xs uppercase tracking-widest text-muted-foreground">Sessions</p>
               <p className="mt-2 inline-flex items-center gap-2 text-sm font-semibold">
                 <BadgeCheck className="w-4 h-4 text-neon" /> {t.about.stats[1].v} {t.about.stats[1].l}
               </p>
             </div>
             <div className="border border-border bg-background/40 p-4">
-              <p className="mono text-[10px] uppercase tracking-widest text-muted-foreground">Location</p>
+              <p className="mono text-xs uppercase tracking-widest text-muted-foreground">Location</p>
               <p className="mt-2 inline-flex items-center gap-2 text-sm font-semibold">
                 <MapPin className="w-4 h-4 text-neon" /> Dubai
               </p>

@@ -65,15 +65,15 @@ const Hero = ({ t }: HeroProps) => {
 
                   <div className="mt-10 grid grid-cols-3 gap-3 max-w-xl">
                     <div className="border border-border bg-background/40 p-4">
-                      <p className="mono text-[10px] uppercase tracking-widest text-muted-foreground">Sessions</p>
+                      <p className="mono text-xs uppercase tracking-widest text-muted-foreground">Sessions</p>
                       <p className="mt-2 flex items-center gap-2 text-sm font-semibold"><BadgeCheck className="w-4 h-4 text-neon" /> 500+</p>
                     </div>
                     <div className="border border-border bg-background/40 p-4">
-                      <p className="mono text-[10px] uppercase tracking-widest text-muted-foreground">Based</p>
+                      <p className="mono text-xs uppercase tracking-widest text-muted-foreground">Based</p>
                       <p className="mt-2 flex items-center gap-2 text-sm font-semibold"><MapPin className="w-4 h-4 text-neon" /> Dubai</p>
                     </div>
                     <div className="border border-border bg-background/40 p-4">
-                      <p className="mono text-[10px] uppercase tracking-widest text-muted-foreground">Focus</p>
+                      <p className="mono text-xs uppercase tracking-widest text-muted-foreground">Focus</p>
                       <p className="mt-2 flex items-center gap-2 text-sm font-semibold"><Timer className="w-4 h-4 text-neon" /> Performance</p>
                     </div>
                   </div>

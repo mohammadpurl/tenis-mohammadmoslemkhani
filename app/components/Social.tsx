@@ -1,7 +1,7 @@
 import { INSTAGRAM_URL } from '@/lib';
 import { Translation } from '@/lib/i18n';
 import { cert1, cert2, coachRacket, perfCoach, perfHero } from '@/public/assets';
-import { AtSign } from 'lucide-react';
+import InstagramIcon from '../Icons/InstagramIcon';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
@@ -30,14 +30,14 @@ const Social = ({ t }: SocialProps) => {
               <h2 className="mt-4 font-display font-bold text-4xl md:text-6xl tracking-tight leading-[0.95]">
                 {t.social.title}
               </h2>
-              <p className="mt-4 text-neon mono text-sm">{t.social.handle}</p>
+              <p className="mt-4 text-neon mono text-sm leading-relaxed">{t.social.handle}</p>
               <Link
                 href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noreferrer"
                 className="mt-8 inline-flex items-center gap-2 px-6 py-3 border border-foreground/20 hover:border-neon hover:text-neon transition"
               >
-                <AtSign className="w-4 h-4" />
+                <InstagramIcon className="w-4 h-4 shrink-0" />
                 {t.social.cta}
               </Link>
             </div>
@@ -57,7 +57,7 @@ const Social = ({ t }: SocialProps) => {
                     />
                   )}
                   <div className="absolute inset-0 bg-background/0 group-hover:bg-background/40 transition flex items-center justify-center">
-                    <AtSign className="w-5 h-5 text-neon opacity-0 group-hover:opacity-100 transition" />
+                    <InstagramIcon className="w-5 h-5 text-neon opacity-0 group-hover:opacity-100 transition shrink-0" />
                   </div>
                 </div>
               ))}

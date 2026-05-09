@@ -1,9 +1,10 @@
 import { INSTAGRAM_URL, WHATSAPP_URL } from '@/lib';
 import { Translation } from '@/lib/i18n';
-import { AtSign, MapPin } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react'
 import ContactForm from './ContactForm';
+import InstagramIcon from '../Icons/InstagramIcon';
 import WhatsAppIcon from '../Icons/WhatsAppIcon';
 
 type FinalCTAProps = {
@@ -37,16 +38,16 @@ const FinalCTA = ({ t }: FinalCTAProps) => {
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 btn-lux btn-lux-ghost"
                 >
-                  <AtSign className="w-4 h-4" />
-                  Instagram
+                  <InstagramIcon className="w-4 h-4 shrink-0" />
+                  {t.cta.instagram}
                 </Link>
               </div>
-              <div className="mt-10 flex items-center gap-2 text-xs mono uppercase tracking-widest text-muted-foreground">
+              <div className="mt-10 flex items-center gap-2 text-sm mono uppercase tracking-wider text-muted-foreground">
                 <MapPin className="w-3.5 h-3.5 text-neon" /> Dubai
               </div>
             </div>
             <div className="border border-border rounded-lg bg-card/60 backdrop-blur p-6 md:p-8">
-              <p className="mono text-[10px] uppercase tracking-widest text-neon mb-4">Quick inquiry</p>
+              <p className="mono text-xs uppercase tracking-widest text-neon mb-4">{t.cta.formLabel}</p>
               <ContactForm t={t} />
             </div>
           </div>

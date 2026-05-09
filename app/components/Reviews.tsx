@@ -44,7 +44,7 @@ const Reviews = ({ t }: ReviewsProps) => {
               <figcaption className="mt-6 pt-6 border-t border-border flex items-center justify-between">
                 <div>
                   <div className="font-semibold text-sm">{r.n}</div>
-                  <div className="text-[11px] text-muted-foreground mt-1 uppercase tracking-[0.14em] flex items-center gap-1">
+                  <div className="text-xs text-muted-foreground mt-1 uppercase tracking-[0.14em] flex items-center gap-1">
                     <MapPin className="w-3 h-3" /> {r.r}
                   </div>
                 </div>

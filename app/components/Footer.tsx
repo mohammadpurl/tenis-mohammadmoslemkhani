@@ -1,10 +1,11 @@
 import { INSTAGRAM_URL, WHATSAPP_URL } from '@/lib';
 import { Lang, Translation } from '@/lib/i18n';
 import { coachPortrait } from '@/public/assets';
-import { AtSign, MapPin } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
+import InstagramIcon from '../Icons/InstagramIcon';
 import WhatsAppIcon from '../Icons/WhatsAppIcon';
 
 type FooterProps = {
@@ -31,7 +32,7 @@ const Footer = ({ lang, t }: FooterProps) => {
 
               <div className="md:col-span-3">
                 <p className="mono text-xs uppercase tracking-widest text-neon">{t.footer.quickLinks}</p>
-                <div className="mt-4 space-y-2 text-sm">
+                <div className="mt-4 space-y-2 text-sm leading-relaxed">
                   <Link href={`/${lang}#about`} className="block hover:text-neon transition">{t.nav.about}</Link>
                   <Link href={`/${lang}#services`} className="block hover:text-neon transition">{t.nav.training}</Link>
                   <Link href={`/${lang}#results`} className="block hover:text-neon transition">{t.nav.results}</Link>
@@ -46,14 +47,14 @@ const Footer = ({ lang, t }: FooterProps) => {
                     <WhatsAppIcon className="w-4 h-4" /> {t.header.whatsapp}
                   </Link>
                   <Link href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm px-3 py-2 rounded-md border border-border bg-background/35 hover:border-neon hover:text-neon transition">
-                    <AtSign className="w-4 h-4" /> Instagram: @mmpersonaltraining
+                    <InstagramIcon className="w-4 h-4 shrink-0" /> {t.footer.instagram}: {t.social.handle}
                   </Link>
                   <p className="inline-flex items-center gap-2 text-sm text-foreground/80 px-3 py-2 rounded-md border border-border bg-background/35"><MapPin className="w-4 h-4 text-neon" /> {t.header.location}</p>
                 </div>
               </div>
             </div>
 
-            <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground mono">
+            <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-muted-foreground mono">
               <div className="font-display font-bold text-foreground tracking-tight">MOSLEMKHANI<span className="text-neon">.</span></div>
               <div>© {new Date().getFullYear()} · {t.footer.rights}</div>
             </div>

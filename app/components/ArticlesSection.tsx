@@ -42,7 +42,7 @@ const ArticlesSection = ({ lang, t }: ArticlesSectionProps) => {
               className={`group rounded-2xl border border-border/80 bg-background/80 p-5 md:p-6 flex min-h-[285px] flex-col backdrop-blur-[2px] hover:border-neon/45 transition ${isRtl ? "text-right" : "text-left"}`}
             >
               <div className="mb-4 flex items-center justify-between gap-3">
-                <span className="mono text-[10px] uppercase tracking-[0.14em] text-foreground/55">{article.readingMinutes} min read</span>
+                <span className="mono text-xs uppercase tracking-[0.14em] text-foreground/55">{article.readingMinutes} min read</span>
                 <span className="h-7 w-7 rounded-md border border-border/80 text-neon/90 inline-flex items-center justify-center">
                   <Icon className="h-3.5 w-3.5" />
                 </span>

@@ -55,7 +55,7 @@ const Results = ({ t }: ResultsProps) => {
             <Image src="/Images/action-shot.jpg" alt="Coach in live tennis training session" fill sizes="(min-width: 1024px) 42vw, 100vw" className="object-cover" />
             <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/10 to-transparent" />
             <figcaption className="absolute inset-x-0 bottom-0 p-6 md:p-8 text-center">
-              <p className="mono text-[11px] tracking-[0.16em] uppercase text-foreground/70">Live training</p>
+              <p className="mono text-xs tracking-[0.16em] uppercase text-foreground/70">Live training</p>
               <p className="mt-2 font-display text-2xl md:text-4xl font-bold text-foreground">Match-ready intensity, every session</p>
             </figcaption>
           </motion.figure>

@@ -28,7 +28,9 @@ export default async function RootLayout({
   return (
     <div lang={lang} dir={t.dir} className="min-h-screen flex flex-col">
       <Navbar lang={lang} t={t} />
-      <main className="flex-1 pt-[72px]">{children}</main>
+      <main className="flex-1 pt-[calc(5.75rem+env(safe-area-inset-top,0px))] md:pt-[calc(4.5rem+env(safe-area-inset-top,0px))]">
+        {children}
+      </main>
       <Footer lang={lang} t={t} />
       <FloatingWhatsApp t={t} />
     </div>
